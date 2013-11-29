@@ -1,0 +1,211 @@
+<?php
+
+function valid($Rname , $Rdate, $Rin, $Rout)
+{
+
+?>
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+	<html>
+	<head>
+	
+		<link rel="stylesheet" type="text/css" href="css/ivory.css" media="all">
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	
+	
+	<style>
+		.content
+		{
+			width: 100%;
+			height: auto; 
+			background-color: #EBEAE8;
+			padding: 30px 12px;
+		}
+		
+	</style>
+
+	<script type="text/javascript">
+
+    	function noBack() 
+	{
+		 window.history.forward(); 
+	}
+   	noBack();
+   	window.onload = noBack;
+   	window.onpageshow = function (evt) 
+				{ 
+					if (evt.persisted) noBack(); 
+				}
+   	window.onunload = function () 
+				{
+ 					void (0); 
+				}
+	</script>
+
+	<title>Edit Records</title>
+	</head>
+	<body>
+
+<?php
+
+		if ($error != '')
+		{
+			echo '<div style="padding:4px; border:1px solid red; color:red;">'.$error.'</div>';
+		}
+?>
+
+		<form action="" method= "post">
+
+		<div class="row">
+		<h1 class="text-center">EDIT ENTRIES</h1>
+		</div>
+
+		<div class="content">	
+		<p align="left"><a href="report.php" > Back</a>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;
+
+		<a href="logout.php"><button class="magenta">logout</button></a></p>
+        	<div class="row space-bot">
+
+
+		<table>
+			<tr>
+				<td colspan="2"><b>Edit Records</b></td>
+			</tr>
+
+			<tr>
+				<td width="179"><b>USERNAME</b></td>
+				<td>
+					<label>
+					<input type="text" name="unm" value="<?php echo $Rname;  ?>" readonly="readonly"/>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td width="179"><b>CURRENT DATE</b></td>
+				<td>
+					<label>
+					<input type="text" name="curr" value="<?php echo $Rdate; ?>" readonly="readonly"/>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td width="179"><b>CHECKIN TIME<em>*</em></b></td>
+				<td>
+					<label>
+					<input type="text" name="in" value="<?php echo $Rin; ?>"  />
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td width="179"><b>CHECKOUT TIME<em>*</em></b></td>
+				<td>
+					<label>
+					<input type="text" name="out" value="<?php echo $Rout; ?>"  />
+					</label>
+				</td>
+			</tr>
+
+			<tr align="Right">
+				<td colspan="2">
+					<label>
+					<button type="submit" class ="magenta"  name="submit" value="Edit Records" >Edit Records</button>
+					<!--<input type="submit" name="submit" value="Edit Records">-->
+					</label>
+				</td>
+			</tr>
+		</table>
+
+		<hr>
+	
+		</div>
+		</div>
+		</form>
+	</body>
+	</html>
+<?php
+}
+
+include('config.php');
+		$username = $_GET['uname'];
+		$user_curr_date = $_GET['att_date'];
+		$check_in = $_GET['att_check_in'];
+		$check_out = $_GET['att_check_out'];
+		
+if(isset($_POST['submit']))
+{
+		
+		$username = $_POST['unm'];
+		$user_curr_date = $_POST['curr'];
+		$user_check_in = $_POST['in'];
+		$user_check_out = $_POST['out'];
+		
+		//valid($username , $user_curr_date, $user_check_in, $user_check_out);
+	
+		$a= "00:00:00";
+		$c= "$user_check_in";
+		$b= "$user_check_out";
+                 echo "$b";
+	
+		if(strtotime($b) == strtotime($a))
+		{
+			echo "hi";
+			mysql_query("UPDATE tb_attendance t1, tb_user t2 SET t1.att_check_in='$user_check_in', t1.att_check_out='$user_check_out', t1.att_diff='00:00:00' WHERE t2.uname='$username' AND t1.att_date='$user_curr_date' AND t1.att_check_in='$check_in' AND t1.att_check_out='$check_out' AND t1.att_uid=t2.uid");	
+		}
+		else
+		{
+ 			
+			//$tm=strtotime($b)-strtotime($c);
+			$v=gmdate("H:i:s",strtotime($b)-strtotime($c));
+                          echo "$v";
+                        
+			mysql_query("UPDATE tb_attendance t1, tb_user t2 SET t1.att_check_in='$user_check_in', t1.att_check_out='$user_check_out', t1.att_diff= '$v' WHERE t2.uname='$username' AND t1.att_date='$user_curr_date' AND t1.att_check_in='$check_in' AND t1.att_check_out='$check_out' AND t1.att_uid=t2.uid");
+			
+		}
+
+
+		header("Location:report.php");
+	
+}
+else
+{
+		$username = $_GET['uname'];
+		$user_curr_date = $_GET['att_date'];
+		$check_in = $_GET['att_check_in'];
+		$check_out = $_GET['att_check_out'];
+		
+		valid($username , $user_curr_date, $check_in, $check_out);
+}
+?>
+
+
+

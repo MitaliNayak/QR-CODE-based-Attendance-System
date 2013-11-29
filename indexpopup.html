@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS3 Modal Popups | Script Tutorials</title>
+        <link href="csspopup/layout.css" rel="stylesheet" type="text/css" />
+        <link href="csspopup/modal.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <h2>CSS3 Modal Popups</h2>
+            <a href="http://www.script-tutorials.com/css3-modal-popups/" class="stuts">Back to original tutorial on <span>Script Tutorials</span></a>
+        </header>
+
+        <!-- panel with buttons -->
+        <div class="main">
+            <div class="panel">
+                <a href="#login_form" id="login_pop">Log In</a>
+                <a href="#join_form" id="join_pop">Sign Up</a>
+            </div>
+
+        </div>
+
+        <!-- popup form #1 -->
+        <a href="#x" class="overlay" id="login_form"></a>
+        <div class="popup">
+            <h2>Welcome Guest!</h2>
+            <p>Please enter your login and password here</p>
+            <div>
+                <label for="login">Login</label>
+                <input type="text" id="login" value="" />
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" value="" />
+            </div>
+            <input type="button" value="Log In" />
+
+            <a class="close" href="#close"></a>
+        </div>
+
+        <!-- popup form #2 -->
+        <a href="#x" class="overlay" id="join_form"></a>
+        <div class="popup">
+            <h2>Sign Up</h2>
+            <p>Please enter your details here</p>
+            <div>
+                <label for="email">Login (Email)</label>
+                <input type="text" id="email" value="" />
+            </div>
+            <div>
+                <label for="pass">Password</label>
+                <input type="password" id="pass" value="" />
+            </div>
+            <div>
+                <label for="firstname">First name</label>
+                <input type="text" id="firstname" value="" />
+            </div>
+            <div>
+                <label for="lastname">Last name</label>
+                <input type="text" id="lastname" value="" />
+            </div>
+            <input type="button" value="Sign Up" />&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;<a href="#login_form" id="login_pop">Log In</a>
+
+            <a class="close" href="#close"></a>
+        </div>
+    </body>
+</html>
